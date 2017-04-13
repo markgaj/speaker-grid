@@ -25,33 +25,37 @@ function spkgd_build_metaboxes( $post ){
 
 	add_meta_box( 	'spkgd_speaker_details', 
 					'Speaker Details', 
-					'spkgd_speaker_details_callback' );
+					'spkgd_speaker_details_callback',
+					'spkgd_speaker',
+					'normal' );
 
 	add_meta_box( 	'spkgd_presentation_details', 
 					'Presentation Details', 
-					'spkgd_presentation_details_callback' );
+					'spkgd_presentation_details_callback',
+					'spkgd_speaker',
+					'normal' );
 }
 add_action( 'add_meta_boxes_spkgd_speaker', 'spkgd_build_metaboxes');
 
 function spkgd_speaker_details_callback(){
 	?>
 	<!-- <div class="inside"> -->
-		<div class="form-table">
-			<tr>
-				<td>Name:</td>
-				<td><input type="text" name="name"/></td>
-			</tr>
+		<table class="form-table">
+				<tr>
+					<th>Name:</th>
+					<td><input type="text" name="name"/></td>
+				</tr>
 
-			<tr>
-				<td>Title:</td>
-				<td><input type="text" name="title"></td>
-			</tr>
+				<tr>
+					<th>Title:</th>
+					<td><input type="text" name="title"></td>
+				</tr>
 
-			<tr>
-				<td>Institution:</td>
-				<td><input type="text" name="institution"></td>
-			</tr>
-		</div>
+				<tr>
+					<th>Institution:</th>
+					<td><input type="text" name="institution"></td>
+				</tr>
+		</table>
 	<!-- </div> -->
 	<?php
 
