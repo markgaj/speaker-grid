@@ -4,7 +4,7 @@ function spkgd_create_speaker_Profiles_posttype(){
 
 	// Set UI labels for Custom Post Type
     $labels = array(
-        'name'                	=> 'Speaker Bios',
+        'name'                	=> 'Speaker Profiles',
         'singular_name'       	=> 'Speaker Profile',
         'add_new'				=> 'Add New Speaker Profile',
         'add_new_item'        	=> 'Add New Speaker Profile',
@@ -28,11 +28,15 @@ function spkgd_create_speaker_Profiles_posttype(){
 	    'show_in_nav_menus'			=> false,
 	    'show_in_menu'				=> true,
 	    'show_in_admin_bar'			=> false,
-		/*'menu_position'				=> 
-		//'menu_icon'					=> @todo*/
-	    'supports'      			=> array( 'title', 'editor', 'revisions', 'thumbnail', 'genesis-layouts' ),
-		'has_archive'   			=> false,
+		'menu_position'				=> 5,
+		'menu_icon'					=> 'dashicons-megaphone',//controls-volumeon',
+	    'supports'      			=> array( 'title', 'revisions', 'thumbnail' ),
+		'has_archive'   			=> false
 	);
-	register_post_type( 'spkgd_speaker_Profile', $args ); 
+	register_post_type( 'spkgd_speaker', $args ); 
 }
 add_action( 'init', 'spkgd_create_speaker_Profiles_posttype' );
+
+if( is_admin() ){
+	include( SPKGD_ABSPATH . 'admin/speaker-profile.php');
+}
