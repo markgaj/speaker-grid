@@ -14,6 +14,7 @@ define( 'SPKGD_ABSURL', plugin_dir_url(__FILE__) );
 
 //Link in all relative files
 include( SPKGD_ABSPATH . '/includes/speaker-profile-cpt.php');
+include( SPKGD_ABSPATH . '/includes/shortcode.php');
 if( is_admin() ){
 	//include( SPKGD_ABSPATH . '/admin/menu.php');
 }
