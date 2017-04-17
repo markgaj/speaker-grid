@@ -1,0 +1,130 @@
+.spkgd_container{
+  text-align: center;
+}
+
+.spkgd_box{
+  display: inline-block;
+  background-color: #222E37;
+  width: 48%;  
+  margin: 5px;
+  padding: 20px 20px 0px;
+  vertical-align: top;
+}
+
+.spkgd_box img{
+  float: left;
+  height:200px;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.spkgd_box h2{
+  color: white; 
+}
+
+.spkgd_box p{
+  color: #666666;
+  display: block;
+}
+.spkgd_clear{
+  clear:both;
+  height:0;line-height:0;display:block;
+}
+
+/*.spkgd_link-bar{}*/
+
+.spkgd_speaker-bio-link{
+  float: left;
+}
+
+.spkgd_abstract-link{
+  float: right;
+}
+
+.spkgd_speaker-bio-link, .spkgd_abstract-link{
+  width: calc(50% + 19px);
+  margin: 20px -20px 0px;
+  background-color: #bfcdd9;
+  cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.spkgd_speaker-bio-link:hover, .spkgd_abstract-link:hover{
+  background-color: #dfe6ec !important;
+}
+
+.spkgd_speaker-bio-link p, .spkgd_abstract-link p{
+  color: black;
+  margin: 5px;
+}
+
+.spkgd_speaker-bio-link img, .spkgd_abstract-link img{
+  width:12px;
+  height: 12px;
+  background-color: transparent;
+  float: none;
+  margin-left: 3px;
+  animation: none;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes arrowUp {
+    from {transform: rotate(360Deg);}
+    to {transform: rotate(180Deg);}
+}
+
+@-webkit-keyframes arrowDown {
+    from {transform: rotate(180Deg);}
+    to {transform: rotate(360Deg);}
+}
+
+/* Standard syntax */
+@keyframes arrowUp {
+    from {transform: rotate(360Deg);}
+    to {transform: rotate(180Deg);}
+}
+
+@keyframes arrowDown {
+    from {transform: rotate(180Deg);}
+    to {transform: rotate(360Deg);}
+}
+
+.spkgd_speaker-bio{
+  display: none;
+  background-color: #dfe6ec;
+  width: 100%;
+  margin: -20px -20px 0px -20px;
+  padding: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+.spkgd_speaker-bio .spkgd_institution p{
+  text-align: center;
+}
+.spkgd_speaker-bio p, .spkgd_abstract p{
+  text-align: left;
+}
+
+.spkgd_abstract{
+  display: none;
+  background-color: #dfe6ec;
+  width: 100%;
+  margin: -20px -20px 0px -20px;
+  padding: 0px 20px 20px 20px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 960px) {
+    .spkgd_box {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+}

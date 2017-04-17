@@ -22,5 +22,9 @@ else {
 	//include( SPKGD_ABSPATH . '/includes/tbd.php');
 }
 
-//register scripts for later use
-//wp_register_script( 'spkgd_speaker_grids', (SPKGD_ABSURL . 'js/script.js'), array('???') );
+//register scripts and stylesfor later use
+function spkgd_register_assets(){
+	wp_register_style( 'spkgd_shortcode_styles', (SPKGD_ABSURL . 'css/style-shortcode.css') );
+	//wp_register_script( 'spkgd_speaker_grids', (SPKGD_ABSURL . 'js/script.js'), array('???') );
+}
+add_action('init', 'spkgd_register_assets');
