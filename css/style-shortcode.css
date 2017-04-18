@@ -5,15 +5,15 @@
 .spkgd_box{
   display: inline-block;
   background-color: #222E37;
-  width: 48%;  
-  margin: 5px;
+  width: 47%;  
+  margin: 10px;
   padding: 20px 20px 0px;
   vertical-align: top;
 }
 
 .spkgd_box img{
   float: left;
-  height:200px;
+  height:175px;
   background-color: white;
   margin-right: 20px;
 }
@@ -23,7 +23,7 @@
 }
 
 .spkgd_box p{
-  color: #666666;
+  color: #aaaaaa;
   display: block;
 }
 .spkgd_clear{
@@ -60,7 +60,7 @@
 }
 
 .spkgd_speaker-bio-link p, .spkgd_abstract-link p{
-  color: black;
+  color: #666666;
   margin: 5px;
 }
 
