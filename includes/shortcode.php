@@ -1,6 +1,6 @@
 <?php
 function spkgd_display(){
-	$speakers = get_posts( array('post_type' => 'spkgd_speaker', 'numberposts' => -1) );
+	$speakers = get_posts( array('post_type' => 'spkgd_speaker', 'numberposts' => -1, 'orderby' => 'title') );
 		
 	ob_start(); ?>
 
@@ -13,7 +13,13 @@ function spkgd_display(){
 					<div class="spkgd_box">
 						<img src=<?php echo($feature_image);?> ></img>
 						<h2><?php echo($speaker_data["spkgd_speaker_name"]);?></h2>
-						<p><?php echo($speaker_data["spkgd_abstract_title"]);?></p>
+						<p><?
+							$abstract_title = $speaker_data["spkgd_abstract_title"];
+							if (strlen($abstract_title) > 130) {
+								$last_word = strpos($abstract_title, ' ', 127);
+								echo((substr($abstract_title, 0, $last_word)) . '...');
+							} else echo($abstract_title);
+							?></p>
 						<div class="spkgd_clear"></div>
 						<div class="spkgd_link-bar">
 							<div class="spkgd_speaker-bio-link">
