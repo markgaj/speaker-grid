@@ -56,6 +56,7 @@ function spkgd_enqueue_shortcode_scripts(){
 	//Check if post content contains the Speaker Grid shortcode
 	if( (strpos( $queried_object->post_content, '[spkgd' ) ) !== false ) { //there is a shortcode
 		wp_enqueue_style( 'spkgd_shortcode_styles' );	
+		wp_enqueue_script( 'spkgd_shortcode_scripts');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'spkgd_enqueue_shortcode_scripts');

@@ -24,7 +24,7 @@ else {
 
 //register scripts and stylesfor later use
 function spkgd_register_assets(){
-	wp_register_style( 'spkgd_shortcode_styles', (SPKGD_ABSURL . 'css/style-shortcode.css') );
-	//wp_register_script( 'spkgd_speaker_grids', (SPKGD_ABSURL . 'js/script.js'), array('???') );
+	wp_register_style( 'spkgd_shortcode_styles', 	(SPKGD_ABSURL . 'css/style-shortcode.css') );
+	wp_register_script( 'spkgd_shortcode_scripts', 	(SPKGD_ABSURL . 'js/shortcode.js'), array('jquery') );
 }
 add_action('init', 'spkgd_register_assets');

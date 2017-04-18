@@ -13,7 +13,7 @@
 
 .spkgd_box img{
   float: left;
-  height:175px;
+  height:180px;
   background-color: white;
   margin-right: 20px;
 }
@@ -98,9 +98,9 @@
 .spkgd_speaker-bio{
   display: none;
   background-color: #dfe6ec;
-  width: 100%;
+  width: calc(100% + 40px);
   margin: -20px -20px 0px -20px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   overflow: hidden;
 }
 
@@ -114,17 +114,33 @@
 .spkgd_abstract{
   display: none;
   background-color: #dfe6ec;
-  width: 100%;
+  width: calc(100% + 40px);
   margin: -20px -20px 0px -20px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   overflow: hidden;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1180px) {
     .spkgd_box {
       display: block;
       margin: 20px auto;
       width: 80%;
       max-width: 600px;
     }
+}
+
+@media screen and (max-width: 700px) {
+    .spkgd_box {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .spkgd_box img{
+    float: none;
+    /*height:180px;
+    background-color: white;*/
+    margin-right: 0px;
+}
 }
