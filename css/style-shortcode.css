@@ -60,7 +60,7 @@
 }
 
 .spkgd_speaker-bio-link p, .spkgd_abstract-link p{
-  color: #666666;
+  color: #555555;
   margin: 5px;
 }
 
@@ -106,9 +106,11 @@
 
 .spkgd_speaker-bio .spkgd_institution p{
   text-align: center;
+  color: #555555
 }
 .spkgd_speaker-bio p, .spkgd_abstract p{
   text-align: left;
+  color: #555555
 }
 
 .spkgd_abstract{
@@ -129,7 +131,7 @@
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 702px) {
     .spkgd_box {
       display: block;
       margin: 20px auto;
@@ -142,5 +144,5 @@
     /*height:180px;
     background-color: white;*/
     margin-right: 0px;
-}
+  }
 }
