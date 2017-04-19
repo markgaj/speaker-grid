@@ -1,6 +1,9 @@
 <?php
 function spkgd_display(){
-	$speakers = get_posts( array('post_type' => 'spkgd_speaker', 'numberposts' => -1, 'orderby' => 'title') );
+	$speakers = get_posts( array('post_type' 	=> 'spkgd_speaker', 
+								 'numberposts' 	=> -1, 
+								 'orderby' 		=> 'title',
+								 'order' 		=> 'ASC') );
 		
 	ob_start(); ?>
 
@@ -31,7 +34,7 @@ function spkgd_display(){
 						</div>
 						<div class="spkgd_clear"></div>
 						<div class="spkgd_speaker-bio">
-							<h1> <?php echo($speaker_data["spkgd_speaker_title"]);?></h1>
+							<h3> <?php echo($speaker_data["spkgd_speaker_title"]);?></h3>
 							<div class="spkgd_institution">
 								<p>
 									<?php echo($speaker_data["spkgd_institution"]);?>
@@ -40,7 +43,7 @@ function spkgd_display(){
 							<?php echo($speaker_data["spkgd_biography"]);?>
 						</div>
 						<div class="spkgd_abstract">
-							<h1><?php echo($speaker_data["spkgd_abstract_title"]);?></h1>
+							<h3><?php echo($speaker_data["spkgd_abstract_title"]);?></h3>
 							<p>
 								<?php echo($speaker_data["spkgd_abstract"]);?>
 							</p>

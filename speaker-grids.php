@@ -4,7 +4,7 @@
 * Plugin Name: Speaker Grids
 * Plugin URI: http://fusion53.com/
 * Description: Organize and display speaker profiles in an attractive grid.
-* Version: 0.0.1
+* Version: 0.1.0
 * Author: Mark Gajadhar
 * Author URI: http://fusion53.com/
 **/
