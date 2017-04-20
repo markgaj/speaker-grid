@@ -2,7 +2,7 @@
 function spkgd_display(){
 	$speakers = get_posts( array('post_type' 	=> 'spkgd_speaker', 
 								 'numberposts' 	=> -1, 
-								 'orderby' 		=> 'title',
+								 'orderby' 		=> 'modified',
 								 'order' 		=> 'ASC') );
 		
 	ob_start(); ?>
