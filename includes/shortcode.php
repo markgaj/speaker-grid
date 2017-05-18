@@ -57,18 +57,40 @@ function spkgd_display(){
 add_shortcode( 'spkgd', 'spkgd_display' );
 
 //Only load css/js if shortcode is embedded on post or page
+//Or if this is a category page (which could possibly contain the shortcode)
+//Not the best solution, but the code below isn't working
 function spkgd_enqueue_shortcode_scripts(){
 	//get database info for this page (including post content)
 	//@todo - add if statement to check only posts and pages
 	$queried_object = get_queried_object();	
 
 	//Check if post content contains the Speaker Grid shortcode
-	if( (strpos( $queried_object->post_content, '[spkgd' ) ) !== false ) { //there is a shortcode
+	if( ( (strpos( $queried_object->post_content, '[spkgd' ) ) !== false )
+		|| is_category() ) { //there is a shortcode
 		wp_enqueue_style( 'spkgd_shortcode_styles' );	
 		wp_enqueue_script( 'spkgd_shortcode_scripts');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'spkgd_enqueue_shortcode_scripts');
+
+/* The code below should work. but messes up styling for some reason.
+//Only load css/js if shortcode is embedded on post or page
+function spkgd_load_scripts( $posts ){
+	if ( empty($posts) ){
+        return $posts;
+	}
+
+	foreach ($posts as $post) {
+        // check the post content for the short code
+        if( has_shortcode( $post->post_content, 'spkgd') ){
+            wp_enqueue_style( 'spkgd_shortcode_styles' );	
+			wp_enqueue_script( 'spkgd_shortcode_scripts');
+            break;
+        }
+    }
+    return $posts;
+}
+add_action('the_posts', 'spkgd_load_scripts');*/
 
 function spkgd_strip_array( $target_array ){
 		//strip out unnecessary arrays
