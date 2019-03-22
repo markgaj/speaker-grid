@@ -64,11 +64,14 @@ function spkgd_enqueue_shortcode_scripts(){
 	//@todo - add if statement to check only posts and pages
 	$queried_object = get_queried_object();	
 
-	//Check if post content contains the Speaker Grid shortcode
-	if( ( (strpos( $queried_object->post_content, '[spkgd' ) ) !== false )
-		|| is_category() ) { //there is a shortcode
-		wp_enqueue_style( 'spkgd_shortcode_styles' );	
-		wp_enqueue_script( 'spkgd_shortcode_scripts');
+	//Make sure there is an object. Don't queue script if there is no post content
+	if ( is_object( $queried_object ) ){
+		//Check if post content contains the Speaker Grid shortcode
+		if( ( (strpos( $queried_object->post_content, '[spkgd' ) ) !== false )
+			|| is_category() ) { //there is a shortcode
+			wp_enqueue_style( 'spkgd_shortcode_styles' );	
+			wp_enqueue_script( 'spkgd_shortcode_scripts');
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'spkgd_enqueue_shortcode_scripts');
